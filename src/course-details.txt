@@ -1,0 +1,13 @@
+Login/Signup System (Firebase/Auth0)
+
+Course List with Search & Filter
+
+Video Player Integration (e.g., YouTube, Vimeo)
+
+Student Dashboard (course progress tracking)
+
+Admin Panel (course management, user management)
+
+Payment Integration (Stripe, PayPal)
+
+Forum or Chat (students and instructors communication)
