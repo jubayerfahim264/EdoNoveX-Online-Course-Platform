@@ -15,7 +15,7 @@
   border: 1px solid #0ca50c;
   outline: none;
   background: none;
-  color: #fafafa;
+  color: #2b2b2b;
   transition: 0.3s ease;
   border-radius: 7px !important;
 }
@@ -36,5 +36,5 @@
   right: 0.5rem;
   width: 1rem;
   height: 1rem;
-  color: #ffffff;
+  color: #222222;
 }

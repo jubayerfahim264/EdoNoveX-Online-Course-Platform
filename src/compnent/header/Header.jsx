@@ -18,8 +18,8 @@ const Header = (args) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="dark" dark expand="md" sticky="top" {...args}>
+    <>
+      <Navbar color="light" light expand="md" fixed="top" {...args}>
         <NavbarBrand href="/">
           <img src={logo} alt="EdoNoveX" className="img-fluid" width={150} />
         </NavbarBrand>
@@ -38,7 +38,7 @@ const Header = (args) => {
               <DropdownToggle nav caret>
                 Explore Courses
               </DropdownToggle>
-              <DropdownMenu color="dark" dark>
+              <DropdownMenu className="border-0 shadow-0">
                 <DropdownItem>IT & Web Development</DropdownItem>
                 <DropdownItem>Digital Marketing & Email Marketing</DropdownItem>
                 <DropdownItem>Communication Buildup</DropdownItem>
@@ -53,7 +53,7 @@ const Header = (args) => {
               <DropdownToggle nav caret>
                 Discover Career
               </DropdownToggle>
-              <DropdownMenu color="dark" dark>
+              <DropdownMenu className="border-0 shadow-0">
                 <DropdownItem>Health Science</DropdownItem>
                 <DropdownItem>Finance</DropdownItem>
                 <DropdownItem>Information Technology</DropdownItem>
@@ -86,20 +86,23 @@ const Header = (args) => {
               <DropdownToggle nav caret>
                 More
               </DropdownToggle>
-              <DropdownMenu color="dark" dark>
+              <DropdownMenu className="border-0 shadow-0">
                 <DropdownItem>About</DropdownItem>
                 <DropdownItem>Blog</DropdownItem>
                 <DropdownItem>Creator</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <Button style={{ background: "none" }} className="mx-2 border-0">
+          <Button
+            style={{ background: "none", color: "black" }}
+            className="mx-2 border-0"
+          >
             Log In
           </Button>
           <Button color="success">Sign Up</Button>
         </Collapse>
       </Navbar>
-    </div>
+    </>
   );
 };
 

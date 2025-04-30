@@ -10,6 +10,76 @@
   --green-color: #0ca50c;
   --pink-color: #e72d6c;
   --white-color: #ffffff;
-  background: var(--dark-color);
+  background: #f8f9fa;
+  color: var(--dark-color);
+}
+.home {
+  background: var(--green-color);
   color: var(--white-color);
+}
+
+.category-card {
+  background: #f8f9fa;
+  border-radius: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  height: 100%;
+  color: var(--dark-color);
+  transform: scale(1);
+}
+
+.category-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.course-name {
+  font-size: 20px;
+  margin: 0.5rem 0;
+}
+/*======*/
+.second-headline {
+  font-weight: 700;
+}
+.second-para {
+  font-weight: 400;
+  font-size: 25px;
+  opacity: 0.7;
+}
+.career-path {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.15);
+}
+.career-path img {
+  position: relative;
+  height: 100%;
+}
+.career-path h2 {
+  font-size: 24px;
+  padding: 15px;
+  font-weight: 400;
+}
+.career-path p {
+  padding-right: 15px;
+  cursor: pointer;
+  color: var(--green-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .second-headline {
+    font-size: 19px !important;
+  }
+  .second-para {
+    font-size: 18px;
+  }
+  .career-path {
+    display: block;
+    text-align: center;
+  }
 }
