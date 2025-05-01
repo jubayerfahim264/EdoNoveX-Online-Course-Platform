@@ -1,78 +1,8 @@
-// import React, { useState } from "react";
-// import { Button, Collapse, Card, CardBody } from "reactstrap";
-
-// const Tab = () => {
-//   const [openTab, setOpenTab] = useState(null);
-
-//   const toggleTab = (tabIndex) => {
-//     if (openTab === tabIndex) {
-//       setOpenTab(null);
-//     } else {
-//       setOpenTab(tabIndex);
-//     }
-//   };
-
-//   const tabData = [
-//     {
-//       title: "Popular Courses",
-//       headline: "Web Design & Development Masterclass",
-//     },
-//     {
-//       title: "Top Certificates",
-//       content:
-//         "Explore leadership, project management, finance, and operations.",
-//     },
-//     {
-//       title: "New Courses",
-//       content: "Build soft skills, confidence, time management, and more.",
-//     },
-//     {
-//       title: "Top Diplomas",
-//       content: "Build soft skills, confidence, time management, and more.",
-//     },
-//   ];
-
-//   return (
-//     <div className="container my-5">
-//       <h3 className="text-center mb-4">📚 Browse Course Categories</h3>
-
-//       <div className="row">
-//         {tabData.map((tab, index) => (
-//           <div key={index} className="col-md-3 mb-3 border-bottom">
-//             <Button
-//               style={{ border: "none" }}
-//               color={openTab === index ? "danger" : "primary"}
-//               onClick={() => toggleTab(index)}
-//               block
-//             >
-//               {tab.title} {openTab === index ? "▲" : "▼"}
-//             </Button>
-//             <Collapse isOpen={openTab === index}>
-//               <Card className="shadow mt-2">
-//                 <CardBody></CardBody>
-//               </Card>
-//             </Collapse>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Tab;
 import React, { useState } from "react";
 import { Button, Collapse, Card, CardBody } from "reactstrap";
 
 const Tab = () => {
-  const [openTab, setOpenTab] = useState(null);
-
-  const toggleTab = (tabIndex) => {
-    if (openTab === tabIndex) {
-      setOpenTab(null);
-    } else {
-      setOpenTab(tabIndex);
-    }
-  };
+  const [openTab, setOpenTab] = useState(0); // Default open first tab
 
   const tabData = [
     {
@@ -212,58 +142,59 @@ const Tab = () => {
   return (
     <div className="container my-5">
       <h3 className="text-center mb-4">🎯 Explore Course Tabs</h3>
-      <div className="row">
+
+      {/* Tab Buttons */}
+      <div className="row justify-content-center mb-4">
         {tabData.map((tab, index) => (
-          <>
-            <div key={index} className="col-md-3 mb-3">
-              <Button
-                style={{ border: "none" }}
-                color={openTab === index ? "danger" : "primary"}
-                onClick={() => toggleTab(index)}
-                block
-              >
-                {tab.title} {openTab === index ? "▲" : "▼"}
-              </Button>
-            </div>
-            <Collapse isOpen={openTab === index}>
-              <div className="row">
-                <div className="col-md-3">
-                  <Card className="shadow mt-2">
-                    <CardBody>
-                      {tab.courses.map((course, i) => (
-                        <div key={i} className="mb-4">
-                          <img
-                            src={course.image}
-                            alt={course.title}
-                            className="img-fluid rounded mb-2"
-                          />
-                          <h5>{course.title}</h5>
-                          <p className="text-muted">
-                            ⏰ {course.hours} &nbsp; | &nbsp; 👨‍🎓{" "}
-                            {course.students}+ students
-                          </p>
-                          <p>
-                            <strong>💲 {course.price}</strong>
-                          </p>
-                          <div className="d-flex gap-2">
-                            <Button size="sm" color="secondary">
-                              More Details
-                            </Button>
-                            <Button size="sm" color="success">
-                              Start Learning
-                            </Button>
-                          </div>
-                          <hr />
-                        </div>
-                      ))}
-                    </CardBody>
-                  </Card>
-                </div>
-              </div>
-            </Collapse>
-          </>
+          <div key={index} className="col-md-3 col-sm-6 text-center mb-2">
+            <Button
+              color={openTab === index ? "primary" : "success"}
+              onClick={() => setOpenTab(index)}
+              block
+            >
+              {tab.title}
+            </Button>
+          </div>
         ))}
       </div>
+
+      {/* Tab Content */}
+      <Collapse isOpen={true}>
+        <div className="row">
+          {tabData[openTab].courses.map((course, i) => (
+            <div key={i} className="col-md-3 col-sm-6 mb-4">
+              <Card className="shadow h-100">
+                <CardBody>
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="img-fluid rounded mb-2"
+                  />
+                  <h5>{course.title}</h5>
+                  <p className="text-muted mb-1">
+                    ⏰ {course.hours} &nbsp; | &nbsp; 👨‍🎓 {course.students}+
+                    students
+                  </p>
+                  <p>
+                    <strong>💲 {course.price}</strong>
+                  </p>
+                  <div className="d-flex gap-2">
+                    <Button size="sm" color="secondary">
+                      More Details
+                    </Button>
+                    <Button size="sm" color="success">
+                      Start Learning
+                    </Button>
+                  </div>
+                </CardBody>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </Collapse>
+      <button className="btn btn-outline-success mx-auto mb-3 d-block">
+        Explore Free Courses
+      </button>
     </div>
   );
 };

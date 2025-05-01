@@ -3,6 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import upSkill from "../../assets/crp-upskill.svg";
 import newSkill from "../../assets/crp-new.svg";
 import Tab from "../tab/Tab";
+import Footer from "./Footer/Footer";
 const first = [
   { icon: "💻", label: "IT & Software", courseCount: 1200 },
   { icon: "📊", label: "Management", courseCount: 200 },
@@ -91,6 +92,8 @@ const Home = () => {
       </div>
       {/* ================ */}
       <Tab />
+      {/* ================ */}
+      <Footer />
     </>
   );
 };
