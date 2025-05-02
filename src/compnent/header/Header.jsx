@@ -9,9 +9,9 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Button,
 } from "reactstrap";
 import logo from "../../assets/logo.png";
+import { NavLink } from "react-router-dom";
 
 const Header = (args) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -93,13 +93,9 @@ const Header = (args) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <Button
-            style={{ background: "none", color: "black" }}
-            className="mx-2 border-0"
-          >
+          <NavLink to="/SignIn" className="btn mx-2 bg-transparent">
             Log In
-          </Button>
-          <Button color="success">Sign Up</Button>
+          </NavLink>
         </Collapse>
       </Navbar>
     </>

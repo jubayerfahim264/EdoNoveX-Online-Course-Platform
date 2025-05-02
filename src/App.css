@@ -38,3 +38,49 @@
   height: 1rem;
   color: #222222;
 }
+/* ========================Login================== */
+.card-box {
+  width: 500px;
+  height: auto;
+  perspective: 1000px;
+  position: relative;
+}
+
+.form_front,
+.form_back {
+  width: 100%;
+  padding: 30px;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form_front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.form_back {
+  transform: rotateY(180deg);
+}
+
+.card-box.flipped .form_front {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+.card-box.flipped .form_back {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.link-btn {
+  color: #198754;
+  cursor: pointer;
+  text-decoration: underline;
+}
